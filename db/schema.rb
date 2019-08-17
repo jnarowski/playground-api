@@ -10,12 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_220118) do
+ActiveRecord::Schema.define(version: 2019_08_17_224505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "jwt_blacklists", id: :bigint, default: -> { "nextval('jwt_blacklist_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "authorizations", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "provider"
+    t.string "state"
+    t.string "token"
+    t.string "uid"
+    t.string "key"
+    t.index ["user_id"], name: "index_authorizations_on_user_id"
+  end
+
+  create_table "content", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "state"
+    t.string "thumbnail"
+    t.string "summary"
+    t.string "url"
+    t.string "media_type"
+    t.string "external_source"
+    t.string "external_id"
+    t.datetime "consumed_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "jwt_blacklist", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"

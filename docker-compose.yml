@@ -6,8 +6,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: password
       POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: playground_dev
       PGDATA: /var/lib/postgresql/data/11-4
 networks:
