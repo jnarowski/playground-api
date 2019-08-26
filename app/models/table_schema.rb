@@ -2,30 +2,42 @@ class TableSchema
   AIRTABLE_SCHEMA = {
     schema: {
       "Date" => {
+        id: 'date',
         label: 'Date',
         type: 'date'
       },
       "Deep Work" => {
+        id: 'deep-work',
         label: "Deep Work",
         type: 'number',
       },
+      "Day Type" => {
+        id: "day-type",
+        label: "Day Type",
+        type: 'dropdown',
+      },
       "Exercise" => {
+        id: 'exercise',
         label: "Exercise",
         type: 'time',
       },
       'How am I feeling?' => {
+        id: 'how-am-i-feeling',
         label: "Notes",
         type: 'text'
       },
       "Meditation" => {
+        id: 'meditation',
         label: "Meditation",
         type: 'time',
       },
       "1%" => {
+        id: '1-percent',
         label: "1%",
         type: 'time',
       },
       "Piano" => {
+        id: 'piano',
         label: "Piano",
         type: 'time',
       }
@@ -47,11 +59,12 @@ class TableSchema
     date_field: 'Date',
     note_field: 'How am I feeling?',
     habit_fields: [
-      'Deep Work',
-      'Exercise',
       '1%',
       'Meditation',
-      'Piano'
+      'Piano',
+      'Deep Work',
+      'Exercise',
+      'Day Type'
     ]
   }
 
