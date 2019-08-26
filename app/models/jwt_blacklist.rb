@@ -2,7 +2,6 @@
 
 class JWTBlacklist < ApplicationRecord
   include Devise::JWT::RevocationStrategies::Blacklist
-  table_name = 'jwt_blacklist'
 
   # def self.jwt_revoked?(payload, user)
   #   # Check if in the blacklist
@@ -14,4 +13,5 @@ class JWTBlacklist < ApplicationRecord
   #   expiration = payload['exp'] - payload['iat']
   #   $redis.setex("user_blacklist:#{user.id}:#{payload['jti']}", expiration, payload['jti'])
   # end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_17_224505) do
+ActiveRecord::Schema.define(version: 2019_08_25_203609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_08_17_224505) do
     t.index ["user_id"], name: "index_authorizations_on_user_id"
   end
 
-  create_table "content", force: :cascade do |t|
+  create_table "contents", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.string "state"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2019_08_17_224505) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "jwt_blacklist", force: :cascade do |t|
+  create_table "jwt_blacklists", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false
-    t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+    t.index ["jti"], name: "index_jwt_blacklists_on_jti"
   end
 
   create_table "users", force: :cascade do |t|

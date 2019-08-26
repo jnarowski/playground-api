@@ -1,6 +1,6 @@
 class AddContentTable < ActiveRecord::Migration[6.0]
   def change
-    create_table :content do |t|
+    create_table :contents do |t|
       t.string   :title
       t.string   :author
       t.string   :state

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { 
-    sessions: 'users/sessions', 
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
     registrations: 'users/registrations',
     omniauth_callbacks: "users/omniauth_callbacks"
   }
@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   match 'auth_ping' => 'application#auth_ping', via: :all
 
   resources :airtable, only: [:index, :show]
+  resources :habits, only: [:index]
+  resources :content, only: [:index]
 end

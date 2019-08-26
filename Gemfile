@@ -32,6 +32,7 @@ gem 'airtable'
 gem 'devise', github: "plataformatec/devise"
 gem 'devise-jwt'
 gem 'faraday'
+gem 'fast_jsonapi'
 
 # for reading app
 gem 'omniauth'
@@ -55,6 +56,7 @@ group :development do
   gem 'spring'
   gem 'webmock'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
 end
 
 

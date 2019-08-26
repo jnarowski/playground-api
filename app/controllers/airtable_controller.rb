@@ -1,23 +1,28 @@
 class AirtableController < ApplicationController
-  # https://github.com/Airtable/airtable-ruby 
+  before_action :authenticate_user!
+
   def index
-    records = habit_table.records(
-      fields: ["Date", "Day Type"],
-      sort: ["Date", :asc], 
-      limit: 100
+    response = airtable_client.fetch_all(
+      start_date: Date.today.beginning_of_month.to_s(:db),
+      end_date: Date.today.end_of_month.to_s(:db)
     )
-    render json: records
+
+    json_response(response[:data])
   end
 
-  def show 
+  def show
     record = habit_table.find(params[:id])
     render json: record
   end
 
-  private 
+  private
 
-  def habit_table 
+  def habit_table
     client = Airtable::Client.new("keyfrPeYdlRvZRiXl")
     client.table("appQt6PidlXCkdyTb", "Habits")
+  end
+
+  def airtable_client
+    @airtable_client ||= External::AirtableClient.new
   end
 end
