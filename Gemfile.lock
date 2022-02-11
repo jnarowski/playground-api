@@ -142,7 +142,9 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -150,7 +152,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.5.5)
     multipart-post (2.1.1)
-    nio4r (2.4.0)
+    nio4r (2.5.8)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
@@ -175,7 +177,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.1.4)
     public_suffix (3.1.1)
-    puma (4.0.1)
+    puma (4.3.11)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-cors (1.0.3)
@@ -284,7 +286,7 @@ DEPENDENCIES
   omniauth-goodreads!
   omniauth-pocket
   pg (>= 0.18, < 2.0)
-  puma (~> 4.0.1)
+  puma (~> 4.3.11)
   rack-cors
   rails (= 6.0.0)
   rspec-rails
